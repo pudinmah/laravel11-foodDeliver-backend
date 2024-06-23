@@ -1,0 +1,936 @@
+{
+	"info": {
+		"_postman_id": "13f1b6e3-bb68-44a4-a328-4ce157c512d8",
+		"name": "FIC18-FoodDeliveryOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33697293"
+	},
+	"item": [
+		{
+			"name": "user register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"User\",\r\n    \"email\": \"user@user.com\",\r\n    \"password\": \"12341234\",\r\n    \"phone\": \"085155288364\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurant register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12341234",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "085112345678",
+							"type": "text"
+						},
+						{
+							"key": "restaurant_name",
+							"value": "Kopi Kenangan",
+							"type": "text"
+						},
+						{
+							"key": "restaurant_address",
+							"value": "Jalan pramuka dalam no 28, Karawang",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/OneDrive/Pictures/Category/shoes.png"
+						},
+						{
+							"key": "latlong",
+							"value": "12345678,87654321",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/driver/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"driver",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"admin@admin.com\",\r\n        \"password\": \"12341234\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "driver register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Ujang",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ujang@driver.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12341234",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "085112345123",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/mahpu/OneDrive/Pictures/30665253-ea9d-4916-93e5-f562f2ec028d.jpg"
+						},
+						{
+							"key": "license_plate",
+							"value": "AD3487BR",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/driver/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"driver",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"user@user.com\",\r\n        \"password\": \"12341234\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/user",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "6|xPJAvX7uFzmPMEvON5cc2betDn7D029iF8eMCBx69045d523",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"user@user.com\",\r\n        \"password\": \"12341234\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update latlong",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "7|5xoRMea0ZvEWcmZ0w9muCcb4viPJueSPLEoJXdlq884e5721",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"latlong\": \"1234,1234\"\r\n        \r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/update-latlong",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"update-latlong"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all restaurant",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"user@user.com\",\r\n        \"password\": \"12341234\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/restaurant",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"restaurant_id\":2,\r\n    \"shipping_cost\":10000,\r\n    \"shipping_item\":\r\n    [\r\n        {\r\n            \"product_id\":2,\r\n            \"quantity\":2\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product All",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Jus Alpukat Premium\",\r\n        \"description\": \"Update - Haus minum jus Alpukat\",\r\n        \"price\": \"25000\",\r\n        \"stock\": \"500\",\r\n        \"is_available\": \"1\",\r\n        \"is_favorite\": \"1\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/products/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Jus Alpukat Premium\",\r\n        \"description\": \"Update - Haus minum jus Alpukat\",\r\n        \"price\": \"25000\",\r\n        \"stock\": \"500\",\r\n        \"is_available\": \"1\",\r\n        \"is_favorite\": \"1\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/products/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by restaurant",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Jus Mangga",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Panas Haus cocok jus Mangga",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "25000",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "is_available",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "is_favorite",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/mahpu/OneDrive/Pictures/5a9775cc-facd-434e-8723-61fa2089cb1e.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/products",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order by restaurant",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "14|1BAx1jBj2eJKReatsNarvpN4zLahc9Q8yRRpNd6973dc0840",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"user@user.com\",\r\n        \"password\": \"12341234\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/restaurant?status=processing",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"restaurant"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "processing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"restaurant_id\":2,\r\n    \"shipping_cost\":10000,\r\n    \"order_items\":\r\n    [\r\n        {\r\n            \"product_id\":2,\r\n            \"quantity\":2\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update order by restaurant",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"ready_for_delivery\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/restaurant/update-status/3",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"restaurant",
+						"update-status",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order by driver",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"ready_for_delivery\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/driver",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"driver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update order by driver",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"delivered\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/driver/update-status/3",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"driver",
+						"update-status",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order by user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"ready_for_delivery\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/user",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update order by user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|8v9kUWTsjkh1LCULMOXboK9ZSpfGC2pewhmBkrRXcda76227",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"processing\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/user/update-status/3",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"user",
+						"update-status",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
